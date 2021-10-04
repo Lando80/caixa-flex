@@ -15,7 +15,11 @@
     $nome = $_POST['email'];
     ?>
 
-    {{ $usuario->id }} {{ $usuario->nome }} {{ $usuario->email }} {{ $usuario->senha }}
+    {{ $usuario->id }} 
+    {{ $usuario->nome }} 
+    {{ $usuario->email }} 
+    {{ $usuario->senha }}
+    {{ $totalRecebido }}
 
     <div class="container pt-5">
 
@@ -25,25 +29,32 @@
             </div>
         @endif
 
-        <h2>Finanças de: {{ $usuario->nome }} </h2>
+        <h2 class="mb-5">Finanças de: {{ $usuario->nome }} </h2>
 
-        <div class="form-group">
-            <label for="email">Total de Recebimentos</label>
+        <div class="form-group btn btn-outline-success" style="width: 200pt">
+            <label for="emai">Total de Recebimentos</label><br>
+                @foreach ($recebimentos as $recebimento)
+                    @if($recebimento->usuario_id == $usuario->id)
+                        <?php
+                            $totalRecebido += $recebimento->valor
+                        ?>
+                    @endif
+                @endforeach
+            <label >R$ {{ $totalRecebido }} </label><br>
             <a href="/recebimento/{{ $usuario->id }}"><button class="btn btn-primary" style="width: 160pt">Ir para recebimentos</button></a>
-            <input type="text" name="recebimentos" class="form-control">
         </div>
         
-        <div class="form-group">
-            <label for="senha">Total de Pagamentos</label>
-            <a href="/pagamento"><button class="btn btn-primary" style="width: 160">Ir para pagamentos</button></a>
-            <input type="text" name="pagamentos" class="form-control">
+        <div class="form-group btn btn-outline-success" style="width: 200pt">
+            <label for="senha">Total de Pagamentos</label><br>
+            <label >R$ {{ $totalPago }} </label><br>
+            <a href="/pagamento"><button class="btn btn-primary" style="width: 160pt">Ir para pagamentos</button></a>
         </div>
-
-        <div class="form-group">
-            <label for="senha">Saldo</label>
-            <input type="text" name="saldo" class="form-control">
+        <br>
+        <div class="form-group btn btn-outline-success" style="width: 404pt">
+            <label for="senha"><strong>Saldo</strong></label><br>
+            <label >R$ {{ $totalRecebido - $totalPago }} </label><br>
         </div>
-
+        <br>
         <a href="/"><button class="btn btn-primary" style="width: 160">Sair</button></a>
 
     </div>
@@ -54,7 +65,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.pt-BR.min.js" integrity="sha512-mVkLPLQVfOWLRlC2ZJuyX5+0XrTlbW2cyAwyqgPkLGxhoaHNSWesYMlcUjX8X+k45YB8q90s88O7sos86636NQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-       
     
 </body>
 </html>

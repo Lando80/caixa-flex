@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Recebimento;
 
 class UserController extends Controller
 {
@@ -46,6 +47,10 @@ class UserController extends Controller
         $acheiEmail = false;
         $acheiSenha = false;
         $usuario ='';
+
+        $recebimentos = Recebimento::all();
+        $totalRecebido = 0;
+        $totalPago = 0;
     
         $acheiEmailSenha = false;
     
@@ -61,11 +66,20 @@ class UserController extends Controller
         }
         
         if ($acheiEmailSenha){
-            return view ('home', ['usuario' => $usuario]);
+
+        //    dd($usuario, $totalRecebido, $recebimentos);
+            
+            return view ('home', [
+                'usuario' => $usuario,
+                'recebimentos' => $recebimentos,
+                'totalRecebido' => $totalRecebido,
+                'totalPago' => $totalPago
+            ]);
         }else{
-            return redirect()->back()->with('mensagem', 'Entrou capim na palheta, tente novamente');
+            return redirect()->back()->with('mensagem', 'Usuário ou senha incorreta!!');
         }
-    
     }
+
+    //=======================================
 
 }
