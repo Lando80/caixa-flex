@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use App\Models\Recebimento;
+use App\Models\Pagamento;
 
 class UserController extends Controller
 {
@@ -50,6 +51,8 @@ class UserController extends Controller
 
         $recebimentos = Recebimento::all();
         $totalRecebido = 0;
+
+        $pagamentos = Pagamento::all();
         $totalPago = 0;
     
         $acheiEmailSenha = false;
@@ -73,6 +76,7 @@ class UserController extends Controller
                 'usuario' => $usuario,
                 'recebimentos' => $recebimentos,
                 'totalRecebido' => $totalRecebido,
+                'pagamentos' => $pagamentos,
                 'totalPago' => $totalPago
             ]);
         }else{

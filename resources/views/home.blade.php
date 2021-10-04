@@ -46,8 +46,17 @@
         
         <div class="form-group btn btn-outline-success" style="width: 200pt">
             <label for="senha">Total de Pagamentos</label><br>
+                @foreach ($pagamentos as $pagamento)
+                    @if($pagamento->usuario_id == $usuario->id)
+                        <?php
+                            $totalPago += $pagamento->valor
+                        ?>
+                    @endif
+                @endforeach
+
+
             <label >R$ {{ $totalPago }} </label><br>
-            <a href="/pagamento"><button class="btn btn-primary" style="width: 160pt">Ir para pagamentos</button></a>
+            <a href="/pagamento/{{ $usuario->id }}"><button class="btn btn-primary" style="width: 160pt">Ir para pagamentos</button></a>
         </div>
         <br>
         <div class="form-group btn btn-outline-success" style="width: 404pt">

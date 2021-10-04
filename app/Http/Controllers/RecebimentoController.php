@@ -53,7 +53,7 @@ class RecebimentoController extends Controller
         $recebimento = Recebimento::find($recebimento);
         $recebimento->update($dados);
 
-        return redirect()->back()->with(['mensagem' => 'Registro editado com Sucesso!']);
+        return redirect()->back()->with(['mensagem' => 'Registro de recebimento editado com Sucesso!']);
     }
 
     
