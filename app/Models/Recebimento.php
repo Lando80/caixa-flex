@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Recebimento extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id', 'created_at', 'updated_at' ];
-    protected $table = 'users';
+    protected $table = 'recebimento';
 
-    public function recebimentos()
+    public function user()
     {
-        return $this->hasMany(Recebimento::class);
+        return $this->belongsTo(Recebimento::class);
     }
 
-
 }
-
