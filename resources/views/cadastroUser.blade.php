@@ -11,7 +11,8 @@
 
 </head>
 <body>
-    <div class="container pt-5">
+    <div class="container px-3 py-3 mt-4 border border-primary rounded"
+        style="width: 300pt">
 
         @if(session()->has('mensagem'))
             <div class="alert alert-success">
@@ -40,11 +41,13 @@
                 <input type="password" name="senha" placeholder="Digite sua senha" class="form-control">
             </div>
 
-            <button class="btn btn-primary" style="width: 80pt">Criar</button>
+            <div class="text-center">
+                <button class="btn btn-primary text-center" style="width: 80pt">Criar</button>
+            </div>
         </form>
-        <span>
+        <div class="text-center">
             <a href="/"><button class="btn btn-primary mt-3" style="width: 80pt">Voltar</button></a>
-        </span>
+        </div>
         
     </div>
 

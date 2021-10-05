@@ -15,7 +15,7 @@
     $nome = $_POST['email'];
     ?>
 
-    <div class="container px-3 py-3 mt-5 border border-primary rounded px-3 py-3 text-center"
+    <div class="container px-3 py-3 mt-4 border border-primary rounded text-center"
         style="width: 300pt">
 
         @if(session()->has('mensagem'))
@@ -24,7 +24,7 @@
             </div>
         @endif
         <div class="btn border border-success mb-3" style="width: 250pt">
-            <p>DASHBORAD DO USUARIO</p>
+            <p>USUARIO</p>
             <h2 class="mb-3">{{ $usuario->nome }} </h2>
         </div>
 

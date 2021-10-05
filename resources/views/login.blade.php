@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    <div class="container px-3 py-3 mt-5 border border-primary rounded px-3 py-3"
+    <div class="container px-3 py-3 mt-4 border border-primary rounded"
         style="width: 300pt">
 
         @if(session()->has('mensagem'))
