@@ -15,23 +15,20 @@
     $nome = $_POST['email'];
     ?>
 
-    {{ $usuario->id }} 
-    {{ $usuario->nome }} 
-    {{ $usuario->email }} 
-    {{ $usuario->senha }}
-    {{ $totalRecebido }}
-
-    <div class="container pt-5">
+    <div class="container px-3 py-3 mt-5 border border-primary rounded px-3 py-3 text-center"
+        style="width: 300pt">
 
         @if(session()->has('mensagem'))
             <div class="alert alert-success">
                 {{ session()->get('mensagem') }}
             </div>
         @endif
+        <div class="btn border border-success mb-3" style="width: 250pt">
+            <p>DASHBORAD DO USUARIO</p>
+            <h2 class="mb-3">{{ $usuario->nome }} </h2>
+        </div>
 
-        <h2 class="mb-5">Finanças de: {{ $usuario->nome }} </h2>
-
-        <div class="form-group btn btn-outline-success" style="width: 180pt">
+        <div class="form-group btn btn-outline-success" style="width: 250pt">
             <label for="emai">Total de Recebimentos</label><br>
                 @foreach ($recebimentos as $recebimento)
                     @if($recebimento->usuario_id == $usuario->id)
@@ -44,7 +41,7 @@
             <a href="/recebimento/{{ $usuario->id }}"><button class="btn btn-primary" style="width: 140pt">Ir para recebimentos</button></a>
         </div>
         
-        <div class="form-group btn btn-outline-success" style="width: 180pt">
+        <div class="form-group btn btn-outline-success" style="width: 250pt">
             <label for="senha">Total de Pagamentos</label><br>
                 @foreach ($pagamentos as $pagamento)
                     @if($pagamento->usuario_id == $usuario->id)
@@ -59,12 +56,12 @@
             <a href="/pagamento/{{ $usuario->id }}"><button class="btn btn-primary" style="width: 160pt">Ir para pagamentos</button></a>
         </div>
         <br>
-        <div class="form-group btn btn-outline-success" style="width: 404pt">
+        <div class="form-group btn btn-outline-success" style="width: 250pt">
             <label for="senha"><strong>Saldo</strong></label><br>
             <label >R$ {{ $totalRecebido - $totalPago }} </label><br>
         </div>
         <br>
-        <a href="/"><button class="btn btn-primary" style="width: 160">Sair</button></a>
+        <a href="/"><button class="btn btn-primary" style="width: 160; width: 80pt">Sair</button></a>
 
     </div>
 
