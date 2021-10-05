@@ -26,7 +26,7 @@
             
         <h4 class="mb-4">Editar Recebimento</h4> {{$recebimento->cliente}}
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="/recebimento/{{ $recebimento->id }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
             <div class="form-group d-flex flex-row">
