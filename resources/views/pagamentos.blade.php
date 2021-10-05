@@ -74,7 +74,7 @@
                             ?> 
                             <tr>
                                 <td>
-                                    {{ $pagamento->id }}
+                                    <!-- {{ $pagamento->id }} -->
                                     <a href="/pagamento/{{ $pagamento->id }}/edit" class="btn btn-info btn-sm">Editar</a>
                             
                                     <form   action="/pagamento/{{ $pagamento->id }}"

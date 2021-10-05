@@ -52,13 +52,13 @@
                 @endforeach
 
 
-            <label >R$ {{ $totalPago }} </label><br>
+            <label>R$ {{ $totalPago }}</label><br>
             <a href="/pagamento/{{ $usuario->id }}"><button class="btn btn-primary" style="width: 160pt">Ir para pagamentos</button></a>
         </div>
         <br>
         <div class="form-group btn btn-outline-success" style="width: 250pt">
             <label for="senha"><strong>Saldo</strong></label><br>
-            <label >R$ {{ $totalRecebido - $totalPago }} </label><br>
+            <label><strong>R$ {{ $totalRecebido - $totalPago }}</strongg></label><br>
         </div>
         <br>
         <a href="/"><button class="btn btn-primary" style="width: 160; width: 80pt">Sair</button></a>

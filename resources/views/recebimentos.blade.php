@@ -78,7 +78,7 @@
                         ?> 
                         <tr>
                             <td>
-                                {{ $recebimento->id }}
+                                <!-- {{ $recebimento->id }} -->
                                 <a href="/recebimento/{{ $recebimento->id }}/edit" class="btn btn-info btn-sm">Editar</a>
                         
                                 <form   action="/recebimento/{{ $recebimento->id }}"
@@ -88,7 +88,6 @@
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                                 </form>
-
                             </td>
                             <td>{{ $recebimento->cliente }}</td>
                             <td>{{ $recebimento->descricao }}</td>
