@@ -19,14 +19,14 @@
         @if(session()->has('mensagem'))
         <div class="alert alert-success">
             {{ session()->get('mensagem') }}
-        </div>
+        </div>/recebimento/{{$recebimento->id }}
         @endif
         
         <div class="border border-primary rounded px-3 py-3">
             
         <h4 class="mb-4">Editar Recebimento</h4> {{$recebimento->cliente}}
 
-        <form action="/recebimento/{{$recebimento->id }}" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
             <div class="form-group d-flex flex-row">

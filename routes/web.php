@@ -16,7 +16,7 @@ Route::get('/recebimento/{recebimento}/edit', [RecebimentoController::class, 'ed
 Route::put('/recebimento/{recebimento}', [RecebimentoController::class, 'update']);
 Route::delete('/recebimento/{recebimento}', [RecebimentoController::class, 'destroy']);
 
-Route::get('/pagamento/{id_usuario}', [PagamentoController::class, 'index']); //aproveitei esta rota para visualizar e criar os registros, deletei a rota create ref. a recebimentos
+Route::get('/pagamento/{id_usuario}', [PagamentoController::class, 'index']); //também aproveitei esta rota para visualizar e criar os registros, deletei a rota create ref. a pagamentos
 Route::post('/pagamento', [PagamentoController::class, 'store']);
 Route::get('/pagamento/{pagamento}/edit', [PagamentoController::class, 'edit']);
 Route::put('/pagamento/{pagamento}', [PagamentoController::class, 'update']);

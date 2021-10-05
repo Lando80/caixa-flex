@@ -11,7 +11,8 @@
 
 </head>
 <body>
-    <div class="container pt-5">
+    <div class="container px-3 py-3 mt-5 border border-primary rounded px-3 py-3"
+        style="width: 300pt">
 
         @if(session()->has('mensagem'))
             <div class="alert alert-success">
@@ -34,33 +35,15 @@
                 <input type="password" name="senha" placeholder="Digite sua senha" class="form-control">
             </div>
             
-            <button type="submit" class="btn btn-primary" style="width: 80pt">Entrar</button>
-
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary " style="width: 80pt">Entrar</button>
+            </div>
         </form>
 
-        <a href="/user/create"><button class="btn btn-primary mt-3" style="width: 80pt">Cadastro</button></a>
+        <div class="text-center">
+            <a href="/user/create"><button class="btn btn-primary mt-3 " style="width: 80pt">Cadastrar</button></a>
+        </div>
         
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>email</th>
-                    <th>senha</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->nome }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->senha }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-
     </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

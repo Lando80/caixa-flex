@@ -31,7 +31,7 @@
 
         <h2 class="mb-5">Finanças de: {{ $usuario->nome }} </h2>
 
-        <div class="form-group btn btn-outline-success" style="width: 200pt">
+        <div class="form-group btn btn-outline-success" style="width: 180pt">
             <label for="emai">Total de Recebimentos</label><br>
                 @foreach ($recebimentos as $recebimento)
                     @if($recebimento->usuario_id == $usuario->id)
@@ -41,10 +41,10 @@
                     @endif
                 @endforeach
             <label >R$ {{ $totalRecebido }} </label><br>
-            <a href="/recebimento/{{ $usuario->id }}"><button class="btn btn-primary" style="width: 160pt">Ir para recebimentos</button></a>
+            <a href="/recebimento/{{ $usuario->id }}"><button class="btn btn-primary" style="width: 140pt">Ir para recebimentos</button></a>
         </div>
         
-        <div class="form-group btn btn-outline-success" style="width: 200pt">
+        <div class="form-group btn btn-outline-success" style="width: 180pt">
             <label for="senha">Total de Pagamentos</label><br>
                 @foreach ($pagamentos as $pagamento)
                     @if($pagamento->usuario_id == $usuario->id)
